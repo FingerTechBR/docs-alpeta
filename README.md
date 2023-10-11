@@ -10,7 +10,7 @@ Exemplo:
     }
   ```
   #### `16777237 --> 0x01000015`
-  ![errorhex](images\errorhex.png)
+  ![errorhex](images/errorhex.png)
 
 3. Você pode ver todos os endpoints e como interagir através do swagger em `http://192.168.x.xx:9004/v1/docs`
 
@@ -66,7 +66,7 @@ Modifique em ambos, o campo `host: '192.168.x.xx:9004' ` com o IP do seu host.
   ...
   ```
 Você então **deverá** utilizar o UUID para ter autorização para os demais endpoints.
-  ![http-headers](images\http-headers.png)
+  ![http-headers](images/http-headers.png)
 
 -----------------
 
