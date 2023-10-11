@@ -189,3 +189,19 @@ A diferença é que `/visit` é para gerenciar visitas registradas e `/visitor` 
 
 -----------------
 
+## Gerenciamento de Usuários
+
+#### Requisitar Usuário
+- `GET http://192.168.x.xx:9004/v1/users` : Requisita um usuário
+  #### Requisição
+  ```json
+  {
+    "UserID": 1000000000000000000
+  }
+  ```
+  Você poderá utilizar e passar vários parâmetros.  
+  `http://192.168.x.xx:9004/v1/users?groupID=1&subInclude=true&offset=0&limit=10`
+  1. `groupID` : ID do grupo que o usuário pertence
+  2. `subInclude` : Incluir subgrupos
+  3. `offset` : Offset da lista de usuários, para paginação
+  4. `limit` : Limite de usuários por página
