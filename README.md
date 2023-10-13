@@ -1,4 +1,6 @@
 # API Ubio-Alpeta
+### Documentos oficiais em [`docs/`](/docs)
+
 ### Observações
 1. Para o uso da API, __você deve__ cadastrar uma serial key válida.
 
