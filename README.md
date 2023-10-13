@@ -199,3 +199,198 @@ A diferença é que `/visit` é para gerenciar visitas registradas e `/visitor` 
   2. `subInclude` : Incluir subgrupos
   3. `offset` : Offset da lista de usuários, para paginação
   4. `limit` : Limite de usuários por página
+
+Você pode ver todos os parâmetros extras e o que eles fazem no swagger.
+
+#### Resposta
+```json
+{
+  "Result": {
+    "ResultCode": 0
+  },
+  "Total": {
+    "Count": 0
+  },
+  "UserList": [
+    {
+      "ID": "0000001",
+      "UniqueID": "9999",
+      "Name": "unioncomm",
+      "AuthInfo": [
+        1,
+        2,
+        4,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "Privilege": 1,
+      "RegistDate": "2018-04-11T01:30:02",
+      "ExpireDate": "2018-04-11T01:30:02",
+      "GroupCode": 0,
+      "AccessGroupCode": 0,
+      "TimezoneCode": 0,
+      "BlackList": 0,
+      "FPIdentify": 0,
+      "FaceIdentify": 0,
+      "APBZone": 0,
+      "EmployeeNum": "A20180100001"
+    }
+  ]
+}
+```
+
+#### Criar Usuário
+- `POST http://192.168.x.xx:9004/v1/users` : Cria um usuário
+  #### Requisição
+  ```json
+  {
+    "UserInfo": {
+      "ID": "9999",
+      "UniqueID": "9999",
+      "Name": "User9999",
+      "AuthInfo": [
+        1,
+        2,
+        3,
+        0,
+        0,
+        0,
+        0,
+        1
+      ],
+      "Privilege": 1,
+      "CreateDate": "2018-04-11 01:30:02",
+      "UsePeriodFlag": 0,
+      "RegistDate": "2018-04-11 01:30:02",
+      "ExpireDate": "2018-04-11 01:30:02",
+      "Password": "1111",
+      "GroupCode": 0,
+      "AccessGroupCode": 0,
+      "UserType": 0,
+      "TimezoneCode": 0,
+      "BlackList": 0,
+      "FPIdentify": 0,
+      "FaceIdentify": 0,
+      "DuressFinger": [
+        1,
+        2,
+        3
+      ],
+      "Partition": 0,
+      "APBExcept": 0,
+      "APBZone": 0,
+      "WorkCode": "****",
+      "MealCode": "****",
+      "MoneyCode": "****",
+      "MessageCode": 0,
+      "VerifyLevel": 0,
+      "PositionCode": 1000,
+      "Department": "Department",
+      "LoginPW": "Login Password",
+      "LoginAllowed": 0,
+      "Picture": "Picture Data ",
+      "EmployeeNum": "A20180100001",
+      "Email": "ABC@gmail.co.kr",
+      "Phone": "***-****-****"
+    },
+    "UserFPInfo": [
+      {
+        "FingerID": 1,
+        "MinConvType": 3,
+        "TemplateIndex": 1,
+        "TemplateData": "TestData"
+      },
+      {
+        "FingerID": 1,
+        "MinConvType": 3,
+        "TemplateIndex": 2,
+        "TemplateData": "TestData"
+      }
+    ],
+    "UserFaceInfo": [
+      {
+        "UserID": 1,
+        "Index": 1,
+        "Type": 0,
+        "SubIndex": 1,
+        "TemplateSize": 4042,
+        "TemplateData": ""
+      },
+      {
+        "UserID": 1,
+        "Index": 1,
+        "Type": 0,
+        "SubIndex": 2,
+        "TemplateSize": 4042,
+        "TemplateData": ""
+      },
+      {
+        "UserID": 1,
+        "Index": 1,
+        "Type": 0,
+        "SubIndex": 3,
+        "TemplateSize": 4042,
+        "TemplateData": ""
+      },
+      {
+        "UserID": 1,
+        "Index": 1,
+        "Type": 0,
+        "SubIndex": 4,
+        "TemplateSize": 4042,
+        "TemplateData": ""
+      },
+      {
+        "UserID": 1,
+        "Index": 1,
+        "Type": 0,
+        "SubIndex": 5,
+        "TemplateSize": 4042,
+        "TemplateData": ""
+      }
+    ],
+    "UserCardInfo": [
+      {
+        "CardNum": "TestNum"
+      }
+    ],
+    "UserFaceWTInfo": [
+      {
+        "UserID": 1,
+        "TemplateSize": 1,
+        "TemplateData": "TestData",
+        "TemplateType": 1
+      }
+    ],
+    "UserIrisInfo": [
+      {
+        "UserID": 1,
+        "EyeType": 1,
+        "TemplateSize": 1,
+        "TemplateData": ""
+      }
+    ]
+  }
+  ```
+  #### Resposta
+  ```json
+  {
+    "Result": {
+      "ResultCode": 0
+    }
+  }
+  ```
+Pode se observar que existem inúmeros parâmetros para criar um usuário.
+1. `UserInfo` : Informações do usuário
+2. `UserFPInfo` : Informações de impressão digital
+3. `UserFaceInfo` : Informações de face
+4. `UserCardInfo` : Informações de cartão
+5. `UserFaceWTInfo` : Informações de face (WT)
+6. `UserIrisInfo` : Informações de íris
+
+O swagger pode apontar quais são necessárias e quais são opcionais para o registro.
+
+Observa-se que através do sawgger, métodos CRUD são disponibilizados para gerenciar usuários, inclusive atualizar atributos específicos, verificar se uma ID já existe e etc.
